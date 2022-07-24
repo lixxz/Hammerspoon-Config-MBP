@@ -250,8 +250,8 @@ end
 
 mymapWithName = {
   [singleKey('b', 'firefox')] = function() hs.application.launchOrFocus("Firefox") end,
-  [singleKey('v', 'vscode')] = function() hs.application.launchOrFocus("Visual Studio Code") end,
-  [singleKey('a', 'alacritty')] = function() hs.application.launchOrFocus("Alacritty") end,
+  [singleKey('[', 'vscode')] = function() hs.application.launchOrFocus("Visual Studio Code") end,
+  [singleKey(']', 'alacritty')] = function() hs.application.launchOrFocus("Alacritty") end,
   [singleKey('s', 'spotify')] = function() hs.application.get("Spotify"):activate() end,
   [singleKey('n', 'notes')] = function() hs.application.launchOrFocus("Notes") end,
   -- [singleKey('d', 'notes')] = function() hs.window.desktop():focus() end
@@ -445,7 +445,7 @@ hs.hotkey.bind({"alt"}, "b", function()
 end)
 
 -- select any window for the same application
-hs.hotkey.bind({"cmd", "shift"}, "t", function()
+hs.hotkey.bind({"alt"}, "`", function()
       obj:switchWindow(true)
 end)
 
