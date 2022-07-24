@@ -26,6 +26,36 @@ hs.hotkey.bind({"cmd", "ctrl"}, "l", function()
   win:setFrame(f)
 end)
 
+-- Shift to bottom
+hs.hotkey.bind({"cmd", "ctrl"}, "k", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y + (max.h / 2)
+  f.w = max.w
+  f.h = max.h / 2
+  win:setFrame(f)
+end)
+
+
+-- Shift to top
+hs.hotkey.bind({"cmd", "ctrl"}, "j", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w
+  f.h = max.h / 2
+  win:setFrame(f)
+end)
+
+
 -- Toggle fullscreen
 -- hs.hotkey.bind({"cmd", "shift"}, "m", function()
 --    local win = hs.window.focusedWindow()
@@ -222,10 +252,11 @@ mymapWithName = {
   [singleKey('b', 'firefox')] = function() hs.application.launchOrFocus("Firefox") end,
   [singleKey('v', 'vscode')] = function() hs.application.launchOrFocus("Visual Studio Code") end,
   [singleKey('a', 'alacritty')] = function() hs.application.launchOrFocus("Alacritty") end,
-  [singleKey('s', 'spotify')] = function() hs.application.launchOrFocus("Spotify") end,
+  [singleKey('s', 'spotify')] = function() hs.application.get("Spotify"):activate() end,
   [singleKey('n', 'notes')] = function() hs.application.launchOrFocus("Notes") end,
   -- [singleKey('d', 'notes')] = function() hs.window.desktop():focus() end
   [singleKey('m', 'mail')] = function() hs.application.launchOrFocus("Mail") end,
+  [singleKey('i', 'preview')] = function() hs.application.launchOrFocus("Preview") end,
   [singleKey('h', 'hammerspoon')] = function() hs.application.launchOrFocus("Hammerspoon") end,
   [singleKey('g', 'goodnotes')] = function() hs.application.launchOrFocus("GoodNotes") end,
 }
