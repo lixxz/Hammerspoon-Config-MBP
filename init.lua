@@ -253,6 +253,7 @@ mymapWithName = {
   [singleKey('[', 'vscode')] = function() hs.application.launchOrFocus("Visual Studio Code") end,
   [singleKey(']', 'alacritty')] = function() hs.application.launchOrFocus("Alacritty") end,
   [singleKey('s', 'spotify')] = function() hs.application.get("Spotify"):activate() end,
+  [singleKey('o', 'obsidian')] = function() hs.application.get("Obsidian"):activate() end,
   [singleKey('n', 'notes')] = function() hs.application.launchOrFocus("Notes") end,
   -- [singleKey('d', 'notes')] = function() hs.window.desktop():focus() end
   [singleKey('m', 'mail')] = function() hs.application.launchOrFocus("Mail") end,
